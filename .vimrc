@@ -109,6 +109,8 @@ NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'jiangmiao/simple-javascript-indenter'
 " CoffeeScript
 NeoBundle 'kchmck/vim-coffee-script'
+" quickrun for node.js
+NeoBundle 'thinca/vim-quickrun'
 
 " unite
 NeoBundle 'Shougo/unite.vim'
@@ -676,3 +678,5 @@ function! my_action.func(candidates)
 endfunction
 call unite#custom_action('file', 'my_vsplit', my_action)
 
+" quickrun for Node
+let g:quickrun_config = { "javascript": { "command": "node", "tempfile": "{tempname()}.js" } }
