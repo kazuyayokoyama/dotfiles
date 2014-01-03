@@ -678,5 +678,20 @@ function! my_action.func(candidates)
 endfunction
 call unite#custom_action('file', 'my_vsplit', my_action)
 
-" quickrun for Node
-let g:quickrun_config = { "javascript": { "command": "node", "tempfile": "{tempname()}.js" } }
+" quickrun
+let g:quickrun_config = {}
+let g:quickrun_config[ 'javascript' ] = { "command": "node", "tempfile": "{tempname()}.js" }
+let g:quickrun_config[ 'html' ] = { 'command' : 'open', 'exec' : '%c %s', 'outputter': 'browser' }
+
+" Simple-Javascript-Indenter
+" この設定入れるとshiftwidthを1にしてインデントしてくれる
+let g:SimpleJsIndenter_BriefMode = 1
+" この設定入れるとswitchのインデントがいくらかマシに
+let g:SimpleJsIndenter_CaseIndentLevel = -1
+
+" open-browser {{{
+" refs http://d.hatena.ne.jp/tyru/20100619/git_push_vim_plugins_to_github
+nmap <Space>w <Plug>(openbrowser-open)
+vmap <Space>w <Plug>(openbrowser-open)
+"}}}
+
